@@ -1,0 +1,113 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #040d13;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+text {
+    user-select: none; /* Evita que el texto sea seleccionable */
+    pointer-events: none; /* Hace que el texto no interfiera con los eventos del mouse */
+}
+
+.menu-container {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: 2rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center center;
+  }
+
+  .centered-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(17, 24, 39, 0.3); /* bg-gray-900/30 */
+    backdrop-filter: blur(4px); /* backdrop-blur-sm */
+  }
+
+  .rueda {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .circuloInterno {
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .interactive:hover {
+    opacity: 1;
+  }
+
+  .menu-center {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #1a1a1a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s ease;
+  }
+
+  .Panel {
+    position: absolute;
+    right: 0;
+    top: 20%;
+    transform: translateY(-50%);
+    background-color: #1f2937;
+    color: #ffffff;
+    padding: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+              0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .descripcion {
+    max-width: 24rem;
+    background-color: #1f2937;
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
