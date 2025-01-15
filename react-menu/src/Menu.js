@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Menu.css";
+import BinarySearchTree from "./components/BinarySearchTree";
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [hoveredItem, setHoveredItem] = useState(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [ShowBinarySearchTree, setShowBinarySearchTree] = useState(false);
 
   const menuItems = [
     { 
@@ -42,6 +44,8 @@ const Menu = () => {
   const handleItemClick = (index) => {
     setSelectedItem(index);
   };
+
+
 
   const createTrapezoidPath = (startAngle, angle) => {
     const innerRadius = 155;
@@ -408,6 +412,7 @@ const Menu = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      <BinarySearchTree />;
     </div>
   );
 };
