@@ -30,7 +30,7 @@ const Menu = () => {
       color: "rgba(187, 40, 8, 0.2)",
       description: "Estructura de datos jerárquica con operaciones básicas",
       details: "Implementación y operaciones fundamentales en árboles binarios: inserción, eliminación, búsqueda y recorridos.",
-      route: "/rutas-optimas"
+      route: "/BinarySearchTree"
     },
     { 
       label: "Series Deportivas", 
