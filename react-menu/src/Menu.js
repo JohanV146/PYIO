@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import "./Menu.css";
 
 const Menu = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -13,25 +15,29 @@ const Menu = () => {
       label: "Rutas Óptimas", 
       color: "rgba(255, 126, 0, 0.2)",
       description: "Encuentra el camino más eficiente entre múltiples puntos",
-      details: "Algoritmo para encontrar la ruta más corta o eficiente entre diferentes puntos. Útil para problemas de logística y optimización."
+      details: "Algoritmo para encontrar la ruta más corta o eficiente entre diferentes puntos. Útil para problemas de logística y optimización.",
+      route: "/RutasOptimas"
     },
     { 
       label: "Problema de la Mochila", 
       color: "rgba(132, 139, 121, 0.2)",
       description: "Optimiza la selección de items con restricciones de peso",
-      details: "Resuelve el problema clásico de optimización combinatoria para maximizar el valor de los elementos seleccionados."
+      details: "Resuelve el problema clásico de optimización combinatoria para maximizar el valor de los elementos seleccionados.",
+      route: "/rutas-optimas"
     },
     { 
       label: "Arboles Binarios", 
       color: "rgba(187, 40, 8, 0.2)",
       description: "Estructura de datos jerárquica con operaciones básicas",
-      details: "Implementación y operaciones fundamentales en árboles binarios: inserción, eliminación, búsqueda y recorridos."
+      details: "Implementación y operaciones fundamentales en árboles binarios: inserción, eliminación, búsqueda y recorridos.",
+      route: "/rutas-optimas"
     },
     { 
       label: "Series Deportivas", 
       color: "rgba(36, 195, 115, 0.2)",
       description: "Análisis estadístico de eventos deportivos",
-      details: "Análisis y predicción de resultados en series deportivas usando modelos estadísticos y probabilísticos."
+      details: "Análisis y predicción de resultados en series deportivas usando modelos estadísticos y probabilísticos.",
+      route: "/rutas-optimas"
     }
   ];
 
@@ -41,6 +47,12 @@ const Menu = () => {
 
   const handleItemClick = (index) => {
     setSelectedItem(index);
+  };
+
+  const handleStart = () => {
+    if (selectedItem !== null) {
+      navigate(menuItems[selectedItem].route);
+    }
   };
 
   const createTrapezoidPath = (startAngle, angle) => {
@@ -401,7 +413,7 @@ const Menu = () => {
             <p className="mb-6">{menuItems[selectedItem].details}</p>
             <button
               className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors"
-              onClick={() => console.log(`Iniciar ${menuItems[selectedItem].label}`)}
+              onClick={handleStart}
             >
               Iniciar
             </button>
