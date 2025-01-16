@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.container {
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+    background: linear-gradient(135deg, #84A9AC, #a3bec0); /* Fondo degradado atrevido */
+    color: #2c3e50;
+    padding: 20px;
+    border-radius: 12px; /* Bordes redondeados */
+    max-width: 800px;
+    margin: 20px auto;
+    overflow-y: auto;
+    max-height: 90vh;
+    position: relative;
+}
+
+/* Títulos */
+h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra de texto para destacar */
+    margin-bottom: 20px;
+}
+
+h2, h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Formulario */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ffffff; /* Línea delgada */
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #ffffff;
+    outline: none;
+    background-color: #e7dbcc; /* Sutil cambio de fondo */
+}
+
+/* Botón */
+.button {
+    background: linear-gradient(135deg, #E7DFD5, #d8c5ad); /* Degradado atrevido */
+    color: #204051;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.2s ease, background 0.3s ease;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #b9b3ae, #b8a896); /* Invertir degradado */
+}
+
+/* Errores */
+.error {
+    font-size: 0.9rem;
+    background-color: #ffe6e6;
+    color: #e74c3c;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Resultados */
+.results {
+    margin-top: 20px;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+pre {
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+
+/* Animaciones sutiles */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container, .button, .error, .results {
+    animation: fadeIn 0.5s ease-in-out;
+}
+.backButton {
+    position: absolute; /* Relativo al contenedor */
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(135deg, #b9b3ae, #b8a896); /* Degradado vibrante */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.backButton:hover {
+    background: linear-gradient(135deg, #b9b3ae, #b8a896); /* Invertir degradado */
+    transform: translateY(-2px);
+}
+
+.backButton:active {
+    transform: translateY(0); /* Volver al estado original al hacer clic */
+}
+
+.backButton:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(106, 17, 203, 0.5); /* Sombra al enfocar */
+}

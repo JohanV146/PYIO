@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { generateBST } from './BSTAlgorithm'; // Importar la lógica
+import { useNavigate } from 'react-router-dom';
+import styles from './BinarySearchTree.module.css'; 
 
 const BinarySearchTree = () => {
     const [numKeys, setNumKeys] = useState(''); // Número de llaves
@@ -7,6 +9,11 @@ const BinarySearchTree = () => {
     const [weights, setWeights] = useState([]); // Pesos de las llaves
     const [result, setResult] = useState(null); // Resultado del algoritmo
     const [error, setError] = useState(''); // Mensajes de error
+    const navigate = useNavigate(); // Hook de React Router
+
+    const handleGoBack = () => {
+        navigate(-1); // Volver a la página anterior
+    };
 
     // Actualizar el número de llaves y generar inputs dinámicos
     const handleNumKeysChange = (e) => {
@@ -80,12 +87,38 @@ const BinarySearchTree = () => {
         setResult(treeResult);
         setError('');
     };
+    const renderMatrix = (matrix, title) => (
+        <div className={styles.matrixContainer}>
+            <h3>{title}</h3>
+            <table className={styles.matrixTable}>
+                <thead>
+                    <tr>
+                        {matrix[0].map((_, index) => (
+                            <th key={index}>{index === 0 ? '' : `Col ${index}`}</th>
+                        ))}
+                    </tr>
+                </thead>
+                <tbody>
+                    {matrix.slice(1).map((row, rowIndex) => (
+                        <tr key={rowIndex}>
+                            <td>{`Row ${rowIndex + 1}`}</td>
+                            {row.slice(1).map((value, colIndex) => (
+                                <td key={colIndex}>{value}</td>
+                            ))}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    );
 
     return (
-        <div>
+        <div className={styles.container}>
+            <button className={styles.backButton} onClick={handleGoBack}>
+                ← Volver
+            </button>
             <h1>Árbol Binario de Búsqueda Óptimo</h1>
             <form>
-                {/* Número de llaves */}
                 <div>
                     <label>
                         Número de llaves (entre 2 y 10):
@@ -93,12 +126,10 @@ const BinarySearchTree = () => {
                             type="text"
                             value={numKeys}
                             onChange={handleNumKeysChange}
-                            onKeyDown={handleNumKeysKeyDown}
+                            className={styles.input}
                         />
                     </label>
                 </div>
-
-                {/* Inputs dinámicos para llaves y pesos */}
                 {keys.length > 0 && (
                     <div>
                         <h3>Ingrese las llaves y sus pesos:</h3>
@@ -109,7 +140,8 @@ const BinarySearchTree = () => {
                                     <input
                                         type="text"
                                         value={keys[index]}
-                                        onChange={(e) => handleKeyChange(index, e.target.value)}
+                                        onChange={(e) => setKeys([...keys.slice(0, index), e.target.value, ...keys.slice(index + 1)])}
+                                        className={styles.input}
                                     />
                                 </label>
                                 <label>
@@ -117,7 +149,8 @@ const BinarySearchTree = () => {
                                     <input
                                         type="text"
                                         value={weights[index]}
-                                        onChange={(e) => handleWeightChange(index, e.target.value)}
+                                        onChange={(e) => setWeights([...weights.slice(0, index), e.target.value, ...weights.slice(index + 1)])}
+                                        className={styles.input}
                                     />
                                 </label>
                             </div>
@@ -125,27 +158,16 @@ const BinarySearchTree = () => {
                     </div>
                 )}
             </form>
-
-            {/* Botón para generar el árbol */}
-            <button onClick={handleGenerateTree}>Generar Árbol</button>
-
-            {/* Mostrar error */}
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-
-            {/* Mostrar resultados */}
+            <button onClick={handleGenerateTree} className={styles.button}>
+                Generar Árbol
+            </button>
+            {error && <p className={styles.error}>{error}</p>}
             {result && (
-                <div>
-                    <h2>Resultados</h2>
-                    <h3>Tabla A (Costos):</h3>
-                    <pre>{JSON.stringify(result.A.slice(1).map(row => row.slice(1)), null, 2)}</pre>
-                    <h3>Tabla R (Raíces):</h3>
-                    <pre>{JSON.stringify(result.R.slice(1).map(row => row.slice(1)), null, 2)}</pre>
-                    <h3>Llaves Ordenadas:</h3>
-                    <pre>{JSON.stringify(result.sortedKeys, null, 2)}</pre>
-                    <h3>Probabilidades:</h3>
-                    <pre>{JSON.stringify(result.probabilities, null, 2)}</pre>
-                </div>
-            )}
+            <div className={styles.results}>
+                {renderMatrix(result.A, 'Tabla A (Costos)')}
+                {renderMatrix(result.R, 'Tabla R (Raíces)')}
+            </div>
+        )}
         </div>
     );
 };
