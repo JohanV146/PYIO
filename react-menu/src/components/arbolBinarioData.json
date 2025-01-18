@@ -1,0 +1,17 @@
+{
+    "numKeys": 5,
+    "keys": [
+        "Praga",
+        "New York",
+        "San Jose",
+        "Paris",
+        "Atenas"
+    ],
+    "weights": [
+        2023,
+        8504,
+        3100,
+        2125,
+        6617
+    ]
+}
