@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Menu from "./Menu";
 import RutasOptimas from "./RutasOptimas";
 import BinarySearchTree from "./components/BinarySearchTree";
+import Knapsack from "./components/Knapsack"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Menu />} />
+          <Route path="/knapsack" element={<Knapsack />} />
           <Route path="/rutas-optimas" element={<RutasOptimas />} />
           <Route path="/BinarySearchTree" element={<BinarySearchTree />} />
         </Routes>

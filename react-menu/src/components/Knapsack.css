@@ -1,0 +1,24 @@
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #A6CDC6, #A6CDC6);
+    color: #2c3e50;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 800px;
+    margin: 20px auto;
+    position: relative;
+  }
+  
+  .greenCell {
+    background-color: #adebad;
+  }
+  
+  .redCell {
+    background-color: #ff9999;
+  }
+  

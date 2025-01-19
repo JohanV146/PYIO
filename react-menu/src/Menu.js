@@ -23,7 +23,7 @@ const Menu = () => {
       color: "rgba(132, 139, 121, 0.2)",
       description: "Optimiza la selección de items con restricciones de peso",
       details: "Resuelve el problema clásico de optimización combinatoria para maximizar el valor de los elementos seleccionados.",
-      route: "/rutas-optimas"
+      route: "/knapsack"
     },
     { 
       label: "Arboles Binarios", 
