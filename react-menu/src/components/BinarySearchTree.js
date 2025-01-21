@@ -137,7 +137,7 @@ const BinarySearchTree = () => {
     };
 
     const renderMatrix = (matrix, title) => {
-        // Agregar una fila vacía en la parte inferior
+        //para agregar una fila vacia con ceros
         const extendedMatrix = [...matrix, new Array(matrix[0].length).fill(0)];
     
         return (
@@ -155,7 +155,7 @@ const BinarySearchTree = () => {
                     <tbody>
                         {extendedMatrix.slice(1).map((row, rowIndex) => (
                             <tr key={rowIndex}>
-                                <td>{rowIndex + 1}</td> {/* Primera columna inicia en 1 */}
+                                <td>{rowIndex + 1}</td> 
                                 {row.slice(1).map((value, colIndex) => (
                                     <td key={colIndex}>{value}</td>
                                 ))}
