@@ -1,15 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const RutasOptimas = () => {
+  const [binaryTrees, setBinaryTrees] = useState([]);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const fetchBinaryTrees = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/binary-trees");
+        setBinaryTrees(response.data.saved_trees || []);
+      } catch (err) {
+        setError("Error al cargar los datos");
+      }
+    };
+
+    fetchBinaryTrees();
+  }, []);
+
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold mb-4">Rutas Óptimas</h1>
-      <div className="bg-gray-800 p-6 rounded-lg">
-        <p className="text-white mb-4">
-          Implementación del algoritmo para encontrar rutas óptimas entre múltiples puntos.
-        </p>
-        {/* Aquí irá tu implementación del algoritmo */}
-      </div>
+    <div>
+      <h1>Árboles Binarios</h1>
+      {error ? (
+        <p style={{ color: "red" }}>{error}</p>
+      ) : (
+        <ul>
+          {binaryTrees.length > 0 ? (
+            binaryTrees.map((tree) => (
+              <li key={tree.id}>
+                <strong>Nombre:</strong> {tree.name}
+                <br />
+                <strong>Llaves:</strong>
+                <ul>
+                  {tree.keys.map((key, index) => (
+                    <li key={index}>
+                      {key.text} - Peso: {key.weight}
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))
+          ) : (
+            <p>No hay árboles binarios guardados.</p>
+          )}
+        </ul>
+      )}
     </div>
   );
 };

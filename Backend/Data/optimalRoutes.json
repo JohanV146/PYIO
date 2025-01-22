@@ -1,0 +1,14 @@
+{
+    "saved_routes": [
+      {
+        "id": "1",
+        "name": "Ejemplo 1",
+        "nodes": ["A", "B", "C"],
+        "distances": [
+          [0, 5, Infinity],
+          [5, 0, 3],
+          [Infinity, 3, 0]
+        ]
+      }
+    ]
+}

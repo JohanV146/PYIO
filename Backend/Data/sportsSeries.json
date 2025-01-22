@@ -1,0 +1,12 @@
+{
+    "saved_series": [
+      {
+        "id": "1",
+        "name": "Ejemplo 1",
+        "maxGames": 7,
+        "probHomeA": 0.6,
+        "probVisitA": 0.4,
+        "format": ["A", "B", "A", "B", "A", "B", "A"]
+      }
+    ]
+}
