@@ -254,8 +254,8 @@ const BinarySearchTree = () => {
             
             {result && (
             <div className={styles.results}>
-                {renderMatrix(result.A, 'Tabla A (Costos)')}
-                {renderMatrix(result.R, 'Tabla R (Raíces)')}
+                {renderMatrix(result.A, 'Tabla A')}
+                {renderMatrix(result.R, 'Tabla R')}
             </div>
         )}
         </div>
