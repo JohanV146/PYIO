@@ -4,6 +4,7 @@ import Menu from "./Menu";
 import RutasOptimas from "./components/RutasOptimas";
 import BinarySearchTree from "./components/BinarySearchTree";
 import Knapsack from "./components/Knapsack"
+import SerieProbabilidades from "./components/seriesDeportivas"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/knapsack" element={<Knapsack />} />
           <Route path="/RutasOptimas" element={<RutasOptimas />} />
           <Route path="/BinarySearchTree" element={<BinarySearchTree />} />
+          <Route path="/seriesDeportivas" element={<SerieProbabilidades />} />
         </Routes>
       </Router>
     </div>

@@ -37,7 +37,7 @@ const Menu = () => {
       color: "rgba(36, 195, 115, 0.2)",
       description: "Análisis estadístico de eventos deportivos",
       details: "Análisis y predicción de resultados en series deportivas usando modelos estadísticos y probabilísticos.",
-      route: "/rutas-optimas"
+      route: "/seriesDeportivas"
     }
   ];
 
