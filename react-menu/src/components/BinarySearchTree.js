@@ -41,15 +41,23 @@ const BinarySearchTree = () => {
 
     // el creador del arbol binario
     const handleGenerateTree = () => {
+        console.log(keys);
+            console.log(weights);
         if (!keys.length || !weights.length) {
             setError('Por favor, ingrese la cantidad de llaves.');
             setMessage('');
             return;
         }
-        if (keys.some((key) => key.trim() === '') || weights.some((weight) => weight.trim() === '')) {
+        if (
+            keys.some((key) => typeof key !== 'string' && typeof key !== 'number') ||
+            keys.some((key) => key.toString().trim() === '') ||
+            weights.some((weight) => typeof weight !== 'string' && typeof weight !== 'number') ||
+            weights.some((weight) => weight.toString().trim() === '')
+        ) {
             setError('Por favor, complete todos los campos.');
             return;
         }
+        
         const numericWeights = weights.map((w) => parseInt(w, 10));
         if (numericWeights.some((w) => isNaN(w))) {
             setError('Los pesos deben ser números válidos.');
@@ -63,41 +71,43 @@ const BinarySearchTree = () => {
     const handleFileUpload = (e) => {
         const file = e.target.files[0];
         if (!file) return;
-
+    
         const reader = new FileReader();
         reader.onload = (event) => {
             try {
                 const content = JSON.parse(event.target.result); 
-                const { numKeys, keys, weights } = content;
-
+                const { numKeys, keys: fileKeys, weights: fileWeights } = content;
+    
                 if (
                     typeof numKeys !== 'number' ||
-                    !Array.isArray(keys) ||
-                    !Array.isArray(weights) ||
-                    keys.length !== numKeys ||
-                    weights.length !== numKeys
+                    !Array.isArray(fileKeys) ||
+                    !Array.isArray(fileWeights) ||
+                    fileKeys.length !== numKeys ||
+                    fileWeights.length !== numKeys
                 ) {
                     setError('El archivo tiene un formato inválido.');
                     return;
                 }
-
+    
                 setNumKeys(numKeys.toString());
-                setKeys(keys);
-                setWeights(weights);
+                setKeys(fileKeys);
+                setWeights(fileWeights);
 
-
-                const numericWeights = weights.map((w) => parseInt(w, 10));
-                const treeResult = generateBST(keys, numericWeights);
+                const numericWeights = fileWeights.map((w) => parseInt(w, 10));
+                const treeResult = generateBST(fileKeys, numericWeights);
                 setResult(treeResult);
+    
                 setMessage('Árbol generado con archivo.');
                 setError('');
+
             } catch (err) {
                 setError('No se pudo leer el archivo. Asegúrese de que sea un JSON válido.');
             }
         };
         reader.readAsText(file);
+        
     };
-
+    
     const handleSaveToFile = () => {
 
         if (!keys.length || !weights.length) {
@@ -106,9 +116,13 @@ const BinarySearchTree = () => {
             return;
         }
 
-        if (keys.some((key) => key.trim() === '') || weights.some((weight) => weight.trim() === '')) {
-            setError('Por favor, complete todos los campos antes de guardar.');
-            setMessage('');
+        if (
+            keys.some((key) => typeof key !== 'string' && typeof key !== 'number') ||
+            keys.some((key) => key.toString().trim() === '') ||
+            weights.some((weight) => typeof weight !== 'string' && typeof weight !== 'number') ||
+            weights.some((weight) => weight.toString().trim() === '')
+        ) {
+            setError('Por favor, complete todos los campos.');
             return;
         }
         const numericWeights = weights.map((w) => parseInt(w, 10));

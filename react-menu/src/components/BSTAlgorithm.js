@@ -43,11 +43,5 @@ export function generateBST(keys, weights) {
             }
         }
     }
-    console.log("Tabla A (costos):");
-    console.table(A.slice(1, n + 1).map(row => row.slice(1, n + 1)));
-    console.log("Tabla R (raíces):");
-    console.table(R.slice(1, n + 1).map(row => row.slice(1, n + 1)));
-    console.log("Llaves ordenadas:", sortedKeys);
-    console.log("Probabilidades:", probabilities);
     return { A, R, sortedKeys, probabilities };
 }
