@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Menu from "./Menu";
-import RutasOptimas from "./RutasOptimas";
+import RutasOptimas from "./components/RutasOptimas";
 import BinarySearchTree from "./components/BinarySearchTree";
 import Knapsack from "./components/Knapsack"
 
@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Menu />} />
           <Route path="/knapsack" element={<Knapsack />} />
-          <Route path="/rutas-optimas" element={<RutasOptimas />} />
+          <Route path="/RutasOptimas" element={<RutasOptimas />} />
           <Route path="/BinarySearchTree" element={<BinarySearchTree />} />
         </Routes>
       </Router>

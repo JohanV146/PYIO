@@ -477,5 +477,52 @@
         0
       ]
     ]
+  },
+  {
+    "name": "test",
+    "nodes": [
+      {
+        "id": "A",
+        "label": "A"
+      },
+      {
+        "id": "B",
+        "label": "B"
+      },
+      {
+        "id": "C",
+        "label": "C"
+      },
+      {
+        "id": "D",
+        "label": "D"
+      }
+    ],
+    "adjacencyMatrix": [
+      [
+        0,
+        18,
+        null,
+        11
+      ],
+      [
+        7,
+        0,
+        null,
+        9
+      ],
+      [
+        1,
+        null,
+        0,
+        null
+      ],
+      [
+        null,
+        2,
+        null,
+        0
+      ]
+    ]
   }
 ]

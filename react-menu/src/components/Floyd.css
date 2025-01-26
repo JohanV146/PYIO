@@ -1,0 +1,104 @@
+.floyd-matrix-container {
+    background-color: #1e293b;
+    border-radius: 8px;
+    padding: 20px;
+    max-height: 700px;
+    overflow-y: auto; 
+  }
+  
+  .floyd-matrix-title {
+    color: white;
+    margin-bottom: 15px;
+  }
+  
+  .floyd-matrix-table {
+    background-color: #334155;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .floyd-matrix-header {
+    background-color: #475569;
+    color: white;
+  }
+  
+  .floyd-matrix-row-header {
+    background-color: #475569;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .floyd-matrix-cell {
+    background-color: #334155;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .floyd-matrix-cell-changed {
+    background-color: #22c55e;
+  }
+
+  .optimal-route-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .dialog-content {
+    background-color: #334155;
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+  }
+  
+  .node-selectors {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .node-selectors select {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #475569;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  
+  .dialog-actions button {
+    padding: 0.5rem 1rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .dialog-actions button:disabled {
+    background-color: #6b7280;
+    cursor: not-allowed;
+  }
+  
+  .route-result {
+    margin-top: 1rem;
+    background-color: #475569;
+    padding: 1rem;
+    border-radius: 4px;
+  }
