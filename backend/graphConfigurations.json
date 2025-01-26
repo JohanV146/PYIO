@@ -1,0 +1,481 @@
+[
+  {
+    "name": "hola",
+    "nodes": [
+      {
+        "id": "A",
+        "label": "A"
+      },
+      {
+        "id": "B",
+        "label": "B"
+      },
+      {
+        "id": "C",
+        "label": "C"
+      },
+      {
+        "id": "D",
+        "label": "D"
+      },
+      {
+        "id": "E",
+        "label": "E"
+      },
+      {
+        "id": "F",
+        "label": "F"
+      },
+      {
+        "id": "G",
+        "label": "G"
+      },
+      {
+        "id": "H",
+        "label": "H"
+      },
+      {
+        "id": "I",
+        "label": "I"
+      },
+      {
+        "id": "J",
+        "label": "J"
+      }
+    ],
+    "adjacencyMatrix": [
+      [
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0
+      ]
+    ]
+  },
+  {
+    "name": "2",
+    "nodes": [
+      {
+        "id": "A",
+        "label": "A"
+      },
+      {
+        "id": "B",
+        "label": "B"
+      },
+      {
+        "id": "C",
+        "label": "C"
+      },
+      {
+        "id": "D",
+        "label": "D"
+      },
+      {
+        "id": "E",
+        "label": "E"
+      },
+      {
+        "id": "F",
+        "label": "F"
+      },
+      {
+        "id": "G",
+        "label": "G"
+      },
+      {
+        "id": "H",
+        "label": "H"
+      },
+      {
+        "id": "I",
+        "label": "I"
+      },
+      {
+        "id": "J",
+        "label": "J"
+      }
+    ],
+    "adjacencyMatrix": [
+      [
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0
+      ]
+    ]
+  },
+  {
+    "name": "4",
+    "nodes": [
+      {
+        "id": "A",
+        "label": "A"
+      },
+      {
+        "id": "B",
+        "label": "B"
+      },
+      {
+        "id": "C",
+        "label": "C"
+      },
+      {
+        "id": "D",
+        "label": "D"
+      },
+      {
+        "id": "E",
+        "label": "E"
+      },
+      {
+        "id": "F",
+        "label": "F"
+      },
+      {
+        "id": "G",
+        "label": "G"
+      }
+    ],
+    "adjacencyMatrix": [
+      [
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0
+      ]
+    ]
+  },
+  {
+    "name": "5",
+    "nodes": [
+      {
+        "id": "A",
+        "label": "A"
+      },
+      {
+        "id": "B",
+        "label": "B"
+      },
+      {
+        "id": "C",
+        "label": "C"
+      },
+      {
+        "id": "D",
+        "label": "D"
+      }
+    ],
+    "adjacencyMatrix": [
+      [
+        0,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        0,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        0,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        0
+      ]
+    ]
+  }
+]
